@@ -138,4 +138,43 @@ public class TestsFlow {
         //Then: GetFizzBuzz.getResult() will be called once times
         verify(mockGetFizzBuzz, times(0)).getResult(0);
     }
+
+    @Test
+    public void givenFizzCallConvertStringOnce() {
+        //Given: I am a user
+        given(mockConvertString.getResult("Fizz")).willReturn(false);
+        given(mockRangeVal.getResult(0)).willReturn(false);
+        given(mockGetFizzBuzz.getResult(0)).willReturn("0");
+        //When: I enter the string "Fizz"
+        IFlowTest IFT = new FlowTest(mockConvertString, mockRangeVal, mockGetFizzBuzz);
+        IFT.getResult("Fizz");
+        //Then: ConvertString.getResult() will be called once times
+        verify(mockConvertString, times(1)).getResult("Fizz");
+    }
+
+    @Test
+    public void givenFizzCallRangeValZeroTimes() {
+        //Given: I am a user
+        given(mockConvertString.getResult("Fizz")).willReturn(false);
+        given(mockRangeVal.getResult(0)).willReturn(false);
+        given(mockGetFizzBuzz.getResult(0)).willReturn("0");
+        //When: I enter the string "Fizz"
+        IFlowTest IFT = new FlowTest(mockConvertString, mockRangeVal, mockGetFizzBuzz);
+        IFT.getResult("Fizz");
+        //Then: ConvertString.getResult() will be called once times
+        verify(mockRangeVal, times(0)).getResult(0);
+    }
+
+    @Test
+    public void givenFizzCallGetFizzBuzzZeroTimes() {
+        //Given: I am a user
+        given(mockConvertString.getResult("Fizz")).willReturn(false);
+        given(mockRangeVal.getResult(0)).willReturn(false);
+        given(mockGetFizzBuzz.getResult(0)).willReturn("0");
+        //When: I enter the string "Fizz"
+        IFlowTest IFT = new FlowTest(mockConvertString, mockRangeVal, mockGetFizzBuzz);
+        IFT.getResult("Fizz");
+        //Then: ConvertString.getResult() will be called once times
+        verify(mockGetFizzBuzz, times(0)).getResult(0);
+    }
 }

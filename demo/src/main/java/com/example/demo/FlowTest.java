@@ -16,7 +16,7 @@ public class FlowTest implements IFlowTest {
         if (convertStringCheck) {
             boolean rangeCheck = _IRV.getResult(Integer.parseInt(s));
             if (rangeCheck) {
-            _IGFB.getResult(Integer.parseInt(s));
+                _IGFB.getResult(Integer.parseInt(s));
             }
         }
         return true;
