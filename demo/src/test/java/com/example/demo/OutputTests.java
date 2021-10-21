@@ -78,7 +78,18 @@ class OutputTests {
 		//When: I enter the integer 15
 		IGetFizzBuzz IGBF = new GetFizzBuzz();
 		String result = IGBF.getResult(15);
-		//Then: I get back the string "Buzz"
+		//Then: I get back the string ending with "FizzBuzz"
+		assertEquals(true, result.endsWith("FizzBuzz"));
+
+	}
+
+	@Test
+	public void givenThirtyGetStringEndingInFizzBuzz() {
+		//Given: I am a user
+		//When: I enter the integer 30
+		IGetFizzBuzz IGBF = new GetFizzBuzz();
+		String result = IGBF.getResult(30);
+		//Then: I get back the string ending with "FizzBuzz"
 		assertEquals(true, result.endsWith("FizzBuzz"));
 
 	}

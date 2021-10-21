@@ -5,7 +5,7 @@ public class ConvertString implements IConvertString {
         try {
             Integer.parseInt(s);
             return true;
-        } catch (Exception e) {
+        } catch (NumberFormatException nfe) {
             return false;
         }
     }

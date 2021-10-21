@@ -56,4 +56,14 @@ public class ConvertStringTests {
         //Then: I get back false
         assertEquals(false, result);
     }
+
+    @Test
+    public void givenStringFiveGetFalse() {
+        //Given: I am a user
+        //When: I enter the string "five"
+        IConvertString ICS = new ConvertString();
+        boolean result = ICS.getResult("five");
+        //Then: I get back false
+        assertEquals(false, result);
+    }
 }
