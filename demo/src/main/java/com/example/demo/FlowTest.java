@@ -18,8 +18,6 @@ public class FlowTest implements IFlowTest {
             if (rangeCheck) {
             _IGFB.getResult(Integer.parseInt(s));
             }
-        } else {
-        return false;
         }
         return true;
     }
