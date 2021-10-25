@@ -11,18 +11,17 @@ public class FlowTest implements IFlowTest {
         _IGFB = IGFB;
     }
 
-    public boolean getResult(String s) {
+    public String getResult(String s) {
         boolean convertStringCheck = _ICS.getResult(s);
         if (convertStringCheck) {
             boolean rangeCheck = _IRV.getResult(Integer.parseInt(s));
             if (rangeCheck) {
-                _IGFB.getResult(Integer.parseInt(s));
+                return _IGFB.getResult(Integer.parseInt(s));
             } else {
-                return false;
+                return "Please enter a number between 1 and 300";
             }
         } else {
-            return false;
+            return "Please enter a number in integer form";
         }
-        return true;
     }
 }

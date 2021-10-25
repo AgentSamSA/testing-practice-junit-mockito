@@ -1,5 +1,5 @@
 package com.example.demo;
 
 public interface IFlowTest {
-    boolean getResult(String s);
+    String getResult(String s);
 }
